@@ -33,25 +33,30 @@
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [{    // first dataset.
                     label: 'My First dataset',
-                    backgroundColor: 'rgba(255, 159, 0, 0.8)',  // 4th value = transparent.
-                    borderColor: 'red',
+                    backgroundColor: 'orange',  // 4th value = transparent.
+                    borderColor: 'black',
                     borderWidth: 8,
-                    borderDash: [10, 3],                        // styling for border line, solid & clear.
                     data: [0, 10, 5, 2, 35, 25, 45],
                 },{             // 2nd dataset. separated by comma and {}
                     label: 'My Second dataset',
                     backgroundColor: 'Blue',
                     borderColor: 'black',
-                    data: [10, 15, 25, 8, 25, 38, 48],
-                    pointRadius: 10,
                     pointBackgroundColor: 'white',
-                    pointHitRadius: 20,     // distance for tooltip to activate
-                    //pointHoverRadius: 10,   // point's outline on hover
+                    pointBorderWidth: 5,
+                    pointRadius: 15,
+                    data: [10, 15, 25, 8, 25, 38, 48],
+
                 }]
             },
 
             // Configuration options go here
-            options: {}
+            options: {
+                scales: {
+                    yAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
         });
     </script>
 
