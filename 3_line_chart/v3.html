@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChartJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <h1>ChartJS - Line Charts</h1>
+    <br>
+    
+    <!-- 0.1 wrap canvas inside divs for styling -->
+    <div class="m-10">
+        <div class="card col-md-8 offset-md-2">
+            <!-- 1, canvas for ChartJS-->
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <!-- 2, bring in ChartJS-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- 3, code for creating the chart inside <script>-->
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{    // first dataset
+                    label: 'My First dataset',
+                    backgroundColor: 'orange',
+                    borderColor: 'black',
+                    data: [0, 10, 5, 2, 20, 30, 45],
+                },{             // 2nd dataset. separated by comma and {}
+                    label: 'My Second dataset',
+                    backgroundColor: 'Blue',
+                    borderColor: 'black',
+                    data: [10, 15, 25, 8, 21, 38, 48],
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+    </script>
+
+</body>
+</html>
